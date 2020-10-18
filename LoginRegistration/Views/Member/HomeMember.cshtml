@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "HomeMember";
+}
+
+<h2>HomeMember</h2>
+
+<div>
+  歡迎登入  @HttpContext.Current.User.Identity.Name
+</div>
+@if (Request.IsAuthenticated)
+{
+    using(Html.BeginForm("Logout","Home",FormMethod.Post,new { id = "logoutForm" }))
+    {
+        <a href="javascript:document.getElementById('logoutForm').submit()"> Logout </a>
+    }
+}

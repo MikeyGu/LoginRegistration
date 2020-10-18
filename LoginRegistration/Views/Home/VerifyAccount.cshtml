@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "VerifyAccount";
+}
+
+<h2>Verify Account</h2>
+
+@if (ViewBag.status != null && Convert.ToBoolean(ViewBag.status))
+{
+    <div class="alert alert-success">
+        <strong>@ViewBag.ss</strong>
+        你的帳號已可使用，系統會自動跳回登入頁，或按下 @Html.ActionLink("Login", "Home") 連結，跳回登入頁
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script>
+        @if(ViewBag.ss == "認證成功")
+        {     @:alert()
+            @:setTimeout(function () {
+            @:location.href = "/Home/Login"
+        @:}, 3000);
+        }
+        function alert() {
+            swal("認證成功", "3秒後跳回登入頁...");
+        }
+    </script>
+}
+else
+{
+    <div class="alert-danger">
+        <strong>@ViewBag.err</strong>
+    </div>
+}
+
