@@ -7,12 +7,12 @@
     <Property Name="UesrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IsEmailConfirm" Type="Boolean" />
     <Property Name="ActionCode" Type="Guid" />
-    <Property Name="UserAccount" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UserAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="ResetPwdCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="MemberBaseEntities" annotation:LazyLoadingEnabled="true">

@@ -138,7 +138,7 @@ namespace LoginRegistration.Controllers
         }
         public ActionResult ResetPassword(string id)
         {
-            var v = db.Users.Where(m => m.ResetPwdCode == id);
+            var v = db.Users.Where(m => m.ActionCode.ToString() == id);
             if(v != null)
             {
                 ResetPasswprd p = new ResetPasswprd();
@@ -158,12 +158,13 @@ namespace LoginRegistration.Controllers
             string message = "";
             if (ModelState.IsValid)
             {
-                var v = db.Users.Where(a => a.ResetPwdCode == R.ResetCode).FirstOrDefault();
+                var v = db.Users.Where(a => a.ActionCode.ToString() == R.ResetCode).FirstOrDefault();
                 if(v != null)
                 {
                     v.Password = R.NewPWd;
                     v.ResetPwdCode = "";
-                    db.Configuration.ValidateOnSaveEnabled = false;
+                    v.IsEmailConfirm = true;
+                    db.Configuration.ValidateOnSaveEnabled = false;             
                     db.SaveChanges();
                     message = "密碼更新成功";
                 }
