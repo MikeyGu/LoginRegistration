@@ -1,0 +1,67 @@
+﻿
+.wrapper {
+    width: auto;
+}
+
+#container {
+    height: 60%;
+}
+
+#DataTables_Table_0_filter {
+    display: flex;
+}
+
+    #DataTables_Table_0_filter label {
+        display: flex;
+        align-items: center;
+    }
+
+.tdOne {
+    position: fixed;
+    /*position:sticky;*/
+}
+
+#tableScroll th:not(:first-child) {
+    z-index: 1;
+}
+
+#tableScroll table {
+    table-layout: fixed;
+}
+
+#tableScroll td:nth-child(1) /*, #tableScroll td:nth-child(2),
+        #tableScroll td:nth-child(3), #tableScroll td:nth-child(4)*/ {
+    position: sticky;
+    z-index: 1;
+    background-color: rgb(218, 218, 218);
+}
+
+#tableScroll thead tr th {
+    width: auto;
+    /*width: 100%;*/
+    position: sticky;
+    top: 0;
+}
+
+#tableScroll th:nth-child(1) {
+    z-index: 2;
+}
+
+#tableScroll_filter {
+    display: flex;
+    width: 300px;
+}
+
+.dataTables_filter label {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+}
+
+    .dataTables_filter label > input {
+        height: 30px;
+    }
+
+.custom-select {
+    height: 30px;
+}

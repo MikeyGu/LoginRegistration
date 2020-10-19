@@ -78,7 +78,7 @@ namespace LoginRegistration.Controllers
                     cookie.Expires = DateTime.Now.AddMinutes(timeout);
                     cookie.HttpOnly = true;
                     Response.Cookies.Add(cookie);
-                    return RedirectToAction("HomeMember", "Member");
+                    return RedirectToAction("CustomList", "Member");
                 }
                 else
                 {
